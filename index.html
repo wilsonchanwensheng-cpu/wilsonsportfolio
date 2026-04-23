@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Portfolio__WenShengChan</title>
+    
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORTFOLIO | Wen Sheng Chan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
+
+    <style>
+        :root {
+            --accent: #00d4ff;
+            --bright-blue: #0077ff;
+            --bg: #001220;
+        }
+        body {
+            background-color: var(--bg);
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .tech-font { font-family: 'Syncopate', sans-serif; }
+        
+        /* 动态背景光晕 */
+        .glow-sphere {
+            position: fixed;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(0, 119, 255, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+            z-index: -1;
+            filter: blur(100px);
+            animation: float 25s infinite alternate;
+        }
+
+        @keyframes float {
+            0% { transform: translate(-15%, -15%); }
+            100% { transform: translate(25%, 25%); }
+        }
+
+        /* 质感卡片 */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(25px);
+            border-radius: 28px;
+            transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--accent);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 212, 255, 0.15);
+        }
+
+        .label-text {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--accent);
+            font-weight: 800;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .action-btn {
+            background: linear-gradient(135deg, var(--bright-blue), var(--accent));
+            color: #000;
+            font-weight: 800;
+            padding: 14px 28px;
+            border-radius: 14px;
+            transition: 0.3s;
+            font-size: 13px;
+            text-transform: uppercase;
+            display: inline-flex;
+            align-items: center;
+        }
+        .action-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
+        }
+
+        .secondary-btn {
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            font-weight: 700;
+            padding: 14px 28px;
+            border-radius: 14px;
+            transition: 0.3s;
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+        .secondary-btn:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: #fff;
+        }
+
+        .comp-badge {
+            background: rgba(0, 212, 255, 0.1);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            padding: 8px 18px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .contact-link {
+            transition: 0.3s;
+            border-bottom: 1px solid transparent;
+        }
+        .contact-link:hover {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-thumb { background: var(--bright-blue); border-radius: 5px; }
+    </style>
+</head>
+<body>
+
+    <div class="glow-sphere" style="top: -20%; left: -10%;"></div>
+    <div class="glow-sphere" style="bottom: -20%; right: -10%; animation-delay: -7s;"></div>
+
+    <header class="min-h-screen flex flex-col justify-center items-center px-6 text-center">
+        <div data-aos="zoom-out" data-aos-duration="1200">
+            <h1 class="tech-font text-5xl md:text-8xl font-bold mb-8 tracking-tighter text-white">
+                WEN SHENG <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-300">CHAN</span>
+            </h1>
+            <p class="text-xl md:text-3xl text-gray-300 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
+                Strategic Content & <span class="text-white font-extrabold">Omni-Channel</span> Marketing Specialist
+            </p>
+            <div class="flex flex-wrap gap-4 justify-center">
+                <a href="#competencies" class="action-btn">Core Competencies</a>
+                <a href="#section1" class="secondary-btn">Portfolio</a>
+                <a href="#contact" class="secondary-btn">Contact Me</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="competencies" class="py-32 relative">
+        <div class="container mx-auto px-6">
+            <div class="max-w-5xl mx-auto">
+                <h2 class="tech-font text-3xl mb-16 text-center">CORE COMPETENCIES</h2>
+                
+                <div class="flex flex-wrap justify-center gap-3 mb-20">
+                    <span class="comp-badge">Omni-Channel Strategy</span>
+                    <span class="comp-badge">C-Suite Event Lead</span>
+                    <span class="comp-badge">Performance-Driven Marketing</span>
+                    <span class="comp-badge">Corporate Profiling</span>
+                    <span class="comp-badge">Full-Cycle Production</span>
+                    <span class="comp-badge">Media Synergy</span>
+                    <span class="comp-badge">Stakeholder Management</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="glass-card p-10" data-aos="fade-up">
+                        <h4 class="text-xl font-bold text-blue-400 mb-4">Strategic Orchestration</h4>
+                        <p class="text-gray-300 leading-relaxed text-lg font-light">Expert in 360° campaigns synchronizing Print, CMS, and Social (FB/IG/TikTok/YT) to maximize brand share-of-voice and drive nationwide product launches.</p>
+                    </div>
+                    <div class="glass-card p-10" data-aos="fade-up" data-aos-delay="100">
+                        <h4 class="text-xl font-bold text-blue-400 mb-4">High-Stakes Leadership</h4>
+                        <p class="text-gray-300 leading-relaxed text-lg font-light">Proven track record in managing large-scale logistics for premier corporate events (MCIL T Forum) involving Ministers and C-suite executives.</p>
+                    </div>
+                    <div class="glass-card p-10" data-aos="fade-up" data-aos-delay="200">
+                        <h4 class="text-xl font-bold text-blue-400 mb-4">Performance & Data</h4>
+                        <p class="text-gray-300 leading-relaxed text-lg font-light">Analytical approach over-delivering on KPIs: 189% Reach achievement in Finance sectors and millions of organic impressions for festive initiatives.</p>
+                    </div>
+                    <div class="glass-card p-10" data-aos="fade-up" data-aos-delay="300">
+                        <h4 class="text-xl font-bold text-blue-400 mb-4">Content Fidelity</h4>
+                        <p class="text-gray-300 leading-relaxed text-lg font-light">Specialized in premium storytelling from biographical books to documentary interviews, managing the entire creative pipeline for brand alignment.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-6">
+        
+        <div id="loading-state" class="text-center py-20 text-cyan-400 tech-font animate-pulse">Syncing Database...</div>
+
+        <section id="section1" class="pt-32">
+            <div class="max-w-4xl mb-20" data-aos="fade-right">
+                <h2 class="tech-font text-3xl md:text-4xl text-white mb-6 uppercase leading-tight">01. MAJOR CAMPAIGNS & EVENT MANAGEMENT</h2>
+                <div class="h-1 w-24 bg-blue-500 mb-6"></div>
+                <p class="text-xl text-blue-300/80 font-light leading-relaxed">Focusing on high-impact scalability, multi-channel synergy, and revenue-driving initiatives.</p>
+            </div>
+            <div id="grid-1" class="grid grid-cols-1 lg:grid-cols-2 gap-12"></div>
+        </section>
+
+        <section id="section2" class="pt-48">
+            <div class="max-w-4xl mb-20 ml-auto text-right" data-aos="fade-left">
+                <h2 class="tech-font text-3xl md:text-4xl text-white mb-6 uppercase leading-tight">02. CORPORATE PROFILING & EXCELLENCE SERIES</h2>
+                <div class="h-1 w-24 bg-blue-500 ml-auto mb-6"></div>
+                <p class="text-xl text-blue-300/80 font-light leading-relaxed">Distinguishing between award-based documentaries and premium brand positioning.</p>
+            </div>
+            <div id="grid-2" class="grid grid-cols-1 lg:grid-cols-2 gap-12"></div>
+        </section>
+
+        <section id="section3" class="pt-48">
+            <div class="max-w-4xl mb-20" data-aos="fade-right">
+                <h2 class="tech-font text-3xl md:text-4xl text-white mb-6 uppercase leading-tight">03. SECTOR-SPECIFIC STRATEGIC CAMPAIGNS</h2>
+                <div class="h-1 w-24 bg-blue-500 mb-6"></div>
+                <p class="text-xl text-blue-300/80 font-light leading-relaxed">Targeted campaigns for Real Estate, Healthcare, Finance, B2B Tech, and Consumer Electronics.</p>
+            </div>
+            <div id="grid-3" class="grid grid-cols-1 lg:grid-cols-2 gap-12"></div>
+        </section>
+    </main>
+
+    <section id="contact" class="py-48 relative">
+        <div class="container mx-auto px-6 text-center">
+            <div class="glass-card max-w-4xl mx-auto p-12 md:p-20" data-aos="zoom-in">
+                <h2 class="tech-font text-3xl md:text-5xl mb-8 text-white">GET IN TOUCH</h2>
+                <div class="h-1 w-20 bg-blue-500 mx-auto mb-12"></div>
+                
+                <h3 class="text-2xl font-bold mb-10 text-white">Wen Sheng Chan (Wilson)</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-lg">
+                    <div class="flex flex-col items-center">
+                        <span class="label-text">Phone</span>
+                        <a href="https://wa.me/60174041955" target="_blank" class="contact-link font-medium">+60174041955 <span class="text-xs opacity-70 ml-1">(WhatsApp)</span></a>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="label-text">Email</span>
+                        <a href="mailto:wilsonchanwensheng@gmail.com" class="contact-link font-medium text-sm md:text-lg">wilsonchanwensheng@gmail.com</a>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <span class="label-text">LinkedIn</span>
+                        <a href="https://www.linkedin.com/in/wensheng-chan-563353287" target="_blank" class="contact-link font-medium">Visit Profile</a>
+                    </div>
+                </div>
+                
+                <div class="mt-16">
+                    <a href="https://wa.me/60174041955" target="_blank" class="action-btn">Send a WhatsApp Message</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-24 text-center border-t border-white/5">
+        <p class="text-gray-500 tech-font text-xs tracking-[0.6em]">WEN SHENG CHAN // STRATEGIC HUB 2026</p>
+    </footer>
+
+    <script>
+        const CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vQQGt4byPj3v1lJaJ1kmBd4Df2GwWyhEJH3XuLP_Lg9TKlV8P3BqEvpIENhIUH7p0mtQESpSP7HZaFY/pub?gid=98158869&single=true&output=csv';
+
+        AOS.init({ duration: 1000, once: true });
+
+        function renderLinkButtons(linkStr) {
+            if (!linkStr) return '';
+            const links = linkStr.match(/https?:\/\/[^\s,]+/g);
+            if (!links) return '';
+            return links.map((link, i) => `
+                <a href="${link.trim()}" target="_blank" class="action-btn w-full justify-center text-center">
+                    View Reference URL ${links.length > 1 ? (i + 1) : ''}
+                </a>`).join('');
+        }
+
+        async function init() {
+            Papa.parse(CSV_URL, {
+                download: true,
+                header: false,
+                complete: function(results) {
+                    const rows = results.data;
+                    const headerIdx = rows.findIndex(r => r.some(cell => cell && cell.toString().includes('UID')));
+                    if (headerIdx === -1) return;
+
+                    const headers = rows[headerIdx].map(h => h.trim());
+                    const dataRows = rows.slice(headerIdx + 1);
+
+                    const getIdx = (name) => headers.findIndex(h => h.toLowerCase().includes(name.toLowerCase()));
+                    const col = {
+                        type: getIdx('Project Type'),
+                        name: getIdx('Project / Campaign Name'),
+                        overview: getIdx('Campaign Overview'),
+                        objectives: getIdx('Marketing Objectives'),
+                        strategy: getIdx('Execution & Strategy'),
+                        results: getIdx('Key Results'),
+                        links: getIdx('Reference Links')
+                    };
+
+                    dataRows.forEach(row => {
+                        if (!row[col.name]) return;
+
+                        const project = {
+                            type: row[col.type] || '',
+                            name: row[col.name] || '',
+                            overview: row[col.overview] || '',
+                            objectives: row[col.objectives] || '',
+                            strategy: row[col.strategy] || '',
+                            results: row[col.results] || '',
+                            links: row[col.links] || ''
+                        };
+
+                        const cardHtml = `
+                            <div class="glass-card p-10 flex flex-col" data-aos="fade-up">
+                                <h3 class="tech-font text-2xl font-bold mb-8 text-white leading-tight border-b border-white/10 pb-6">${project.name}</h3>
+                                
+                                <div class="space-y-8 flex-grow text-lg mb-12">
+                                    <div>
+                                        <span class="label-text">Campaign Overview</span>
+                                        <p class="text-gray-300 font-light leading-relaxed">${project.overview}</p>
+                                    </div>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <div>
+                                            <span class="label-text">Marketing Objectives</span>
+                                            <p class="text-gray-400 text-base italic leading-snug">"${project.objectives}"</p>
+                                        </div>
+                                        <div>
+                                            <span class="label-text">Execution & Strategy</span>
+                                            <p class="text-gray-400 text-base leading-relaxed">${project.strategy}</p>
+                                        </div>
+                                    </div>
+                                    <div class="bg-blue-500/10 p-6 rounded-2xl border-l-4 border-blue-400">
+                                        <span class="label-text">Key Results & Impact</span>
+                                        <p class="text-white font-semibold">${project.results}</p>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-3 mt-auto">
+                                    ${renderLinkButtons(project.links)}
+                                </div>
+                            </div>
+                        `;
+
+                        if (project.type.includes('MAJOR')) document.getElementById('grid-1').innerHTML += cardHtml;
+                        else if (project.type.includes('CORPORATE')) document.getElementById('grid-2').innerHTML += cardHtml;
+                        else if (project.type.includes('SECTOR')) document.getElementById('grid-3').innerHTML += cardHtml;
+                    });
+
+                    document.getElementById('loading-state').remove();
+                }
+            });
+        }
+        init();
+    </script>
+</body>
+</html>
+    
+  </body>
+  
+</html>
